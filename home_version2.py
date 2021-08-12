@@ -1,0 +1,80 @@
+import turtle
+import math
+
+t = turtle.Turtle()
+screen = turtle.Screen()
+screen.bgcolor("yellow")
+
+t.pensize(3)
+t.shape("turtle")
+
+def move(x,y):
+    t.penup()
+    t.goto(x,y)
+    t.pendown()
+
+def rectangle(d,r,do):
+    t.right(do)
+    t.forward(r)
+    t.left(do)
+    t.forward(d)
+    t.left(do)
+    t.forward(r)
+    t.left(do)
+    t.forward(d)
+    t.right(do)
+
+def triangel(go):
+    t.rt(45)
+    a = math.sqrt(2)/2*go
+    t.fd(a)
+    t.rt(90)
+    t.fd(a)
+    t.rt(135)
+    t.fd(go)
+    t.rt(90)
+move(-300,0)
+t.fillcolor('cyan')
+t.begin_fill()
+rectangle(400,250,90)
+t.end_fill()
+
+t.fillcolor('brown')
+t.begin_fill()
+triangel(200)
+t.end_fill()
+
+move(-100,0)
+t.fillcolor("brown")
+t.begin_fill()
+move(100,0)
+t.fd(100)
+t.lt(90)
+t.fd(300)
+t.rt(90)
+t.end_fill()
+
+move(-150,-250)
+t.fd(200)
+t.rt(90)
+rectangle(150,150,90)
+t.rt(90)
+rectangle(150,75,90)
+t.rt(90)
+rectangle(75,150,90)
+t.lt(90)
+t.fd(150)
+t.bk(130)
+t.lt(90)
+t.fd(200)
+
+move(0,150)
+t.fillcolor("red")
+t.begin_fill()
+t.lt(90)
+rectangle(50,50,90)
+move(0,175)
+t.rt(90)
+rectangle(50,25,90)
+t.end_fill()
+turtle.done()
